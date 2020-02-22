@@ -26,3 +26,8 @@ print(dogs)
 
 #none 변수선언
 obj = None #False로 평가!
+
+#변수를 생성하고 초기화하는 다양한 방법
+x = y = 10
+print(x)
+print(y)
