@@ -31,3 +31,7 @@ obj = None #False로 평가!
 x = y = 10
 print(x)
 print(y)
+
+x, y = (10, 20)
+print(x)
+print(y)
