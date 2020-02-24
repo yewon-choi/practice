@@ -36,22 +36,47 @@
 # print(x)
 # print(y)
 
-#6. 흐름과 제어 -if
+# #6. 흐름과 제어 -if
 
-score = 80
-if score >= 60:
-    print('{}점'.format(score))
-    print('합격입니다')
+# score = 80
+# if score >= 60:
+#     print('{}점'.format(score))
+#     print('합격입니다')
 
-#출력을 위한 result에 기본값을 설정하는 것!
-result = '불합격입니다'
-score = 80
-if score >= 60:
-    result = '합격입니다.'
-print(result)
+# #출력을 위한 result에 기본값을 설정하는 것!
+# result = '불합격입니다'
+# score = 80
+# if score >= 60:
+#     result = '합격입니다.'
+# print(result)
 
-score = 50
-if score >= 60:
-    print('합격입니다.')
-else:
-    print('불합격입니다.')
+# score = 50
+# if score >= 60:
+#     print('합격입니다.')
+# else:
+#     print('불합격입니다.')
+
+
+# #7.흐름과 제어 - 반복
+# #2단 구구단
+# dan = int(input())
+# for i in range(1,10):
+#     print('{} x {} = {:>2}'.format(dan, i, dan*i))
+
+
+dogs = {1:'골든리트리버', 2:'진돗개', 3:'보더콜리'}
+for key in dogs:
+    print('{} : {}'.format(key, dogs[key]))
+
+for key, value in dogs.items():
+    print('{} : {}'.format(key,value))
+
+#총점구하기
+scores = [100, 95, 88, 98]
+total = 0
+
+for score in scores:
+    total += score
+print('총점: {}'.format(total))
+
+
