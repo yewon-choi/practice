@@ -107,3 +107,49 @@
 
 # print('총점: {}'.format(total))
 
+# #break 문, answer의 값이 q이면 break
+# answer = ''
+
+# while True:
+#     answer = input()
+#     if answer =='q':
+#         break
+#     print('{}을 입력하셨습니다.'.format(answer))
+
+
+# #반복문 실습
+# cnt = 1
+# while cnt < 5:
+#     print('*'*cnt)
+#     cnt +=1
+
+# for i in range(1,5):
+#     print('*'*i)
+
+# for i in range(2):
+#     for j in range(1,5):
+#         print('*'*j)
+
+# i, k = 1, 1
+# while i <= 2:
+#     while k <= 4:
+#         print("*"*k)
+#         k += 1
+#     i += 1
+#     k = 1
+
+
+# #공백문자와 '*'을 이용해서 만드는 것
+# i, k = 5,1
+# while i >= 0:
+#     print('{}{}'.format(' '*i,'*'*(2*k-1)))
+#     i -= 1
+#     k += 1
+
+lst = [85, 65, 77, 83, 75, 22, 98, 88, 38, 100]
+total = 0
+while len(lst) > 0:
+    if lst[-1] >= 80:
+        total += lst[-1]
+        lst.pop()
+print(total)
