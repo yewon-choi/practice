@@ -64,19 +64,46 @@
 #     print('{} x {} = {:>2}'.format(dan, i, dan*i))
 
 
-dogs = {1:'골든리트리버', 2:'진돗개', 3:'보더콜리'}
-for key in dogs:
-    print('{} : {}'.format(key, dogs[key]))
+# dogs = {1:'골든리트리버', 2:'진돗개', 3:'보더콜리'}
+# for key in dogs:
+#     print('{} : {}'.format(key, dogs[key]))
 
-for key, value in dogs.items():
-    print('{} : {}'.format(key,value))
+# for key, value in dogs.items():
+#     print('{} : {}'.format(key,value))
 
-#총점구하기
-scores = [100, 95, 88, 98]
-total = 0
+# #총점구하기
+# scores = [100, 95, 88, 98]
+# total = 0
 
-for score in scores:
-    total += score
-print('총점: {}'.format(total))
+# for score in scores:
+#     total += score
+# print('총점: {}'.format(total))
 
+
+# #중첩된 for문을 활용한 구구단 출력 코드
+# for i in range(2,10):
+#     for j in range(1,10):
+#         print('{} x {} = {:>2}'.format(i,j,i*j))
+
+#while문
+#bool 값을 반환하는 조건식
+#true 면 while 문 값을 반복, false는 while문 나가기
+
+# dan = int(input())
+# i = 1
+
+# while i < 10:
+#     print('{} x {} = {}'.format(dan, i, dan*i))
+#     i += 1
+
+# scores = [100, 95, 88, 98]
+# total = 0
+# cnt = len(scores)
+# i = 0
+
+# while i < cnt:
+#     total += scores[i]
+#     i += 1
+
+# print('총점: {}'.format(total))
 
