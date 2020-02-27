@@ -180,6 +180,7 @@ str() : 인자로 전달된 객체에 대한 문자열 변환 값을 반환하�
 
 globals() : 현재 전역 심볼 테이블을 보여주는 딕셔너리를 반환하는 함수 -> 전역변수와 함수, 클래스의 정보 포함
 locals() : 현재의 지역 심볼 테이블을 보여주는 딕셔너리를 반환하는 함수 -> 매개변수를 포함한 지역변수와 중첩함수의 정보 포함
+
 """
 # #divmod()
 # val1, val2 = 9, 5
@@ -260,6 +261,9 @@ class 클래스명:
 class 클래스명:
     def __del__(self):
 
+** 메서드 오버라이딩
+-> 부모 클래스에 있는 메서드와 동일한 서명을 가진 메서드를
+자식 클래스에서 다시 정의해 사용하는 것
 
 
 """
@@ -396,18 +400,58 @@ class 클래스명:
 
 #클래스 상속(부모 클래스 -> 자식 클래스)
 
+# class Parent:
+#     def __init__(self, family_name):
+#         self.__family_name = family_name
+#         print('Parent 클래스의 __init__()...')
+
+#     @property
+#     def family_name(self):
+#         return self.__family_name
+
+# class Child(Parent):
+#     def __init__(self, first_name, last_name):
+#         Parent.__init__(self, last_name)
+#         #super().__init__(last_name)
+#         self.__first_name = first_name
+#         print('Child 클래스의 __init__()...')
+
+
+#메소드 오버라이딩
+#super() 기반 클래스의 메서드 호출
+
 class Person:
-    def __init__(self, family_name):
-        self.__family_name = family_name
-        print('Parent 클래스의 __init__()...')
+    def greeting(self):
+        print('안녕하세요.')
 
-    @property
-    def family_name(self):
-        return self.__family_name
+class Student(Person):
+    def greeting(self):
+        super().greeting()
+        print('저는 파이썬 코딩 배우는 학생입니다.')
 
-class Child(Parent):
-    def __init__(self, first_name, last_name):
-        Parent.__init__(self, last_name)
-        #super().__init__(last_name)
-        self.__first_name = first_name
-        print('Child 클래스의 __init__()...')
+james = Student()
+james.greeting()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
