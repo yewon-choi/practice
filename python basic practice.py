@@ -222,12 +222,192 @@ locals() : 현재의 지역 심볼 테이블을 보여주는 딕셔너리를 반
 # data_list3 = ['a','b','c']
 # print(list(zip(data_list1,data_list3)))
 
-#globals()
+"""
+객체지향 프로그래밍(object-oriendted Programming)
 
-class Myclass:
-    pass
+객체 형성(상태와 행위로 이루어짐) -> 객체 조립 -> 프로그램 형성
+객체를 이용해 문제를 해결하려는 프로그래밍 방법
 
-def test_fn(param):
-    def inner_fn():
-        pass
-    val
+객체: 변수 + 메서드 연관된 것 들끼리 묶어 만든 것
+
+클래스 
+1. 부품 객체를 만들기 위한 청사진, 설계도, 템플릿
+2. 추상화의 과정을 통해 만들어짐
+
+메서드
+-메시지라고도 부름
+-한 객체의 속성을 조작할 목적으로 사용
+-객체 간의 통신은 메시지 전달을 통해 이루어짐
+-클래스로부터 생성된 객체 사용 시 객체에 명령을 내리는 행위
+-> 객체가 가지고 있는 메서드를 호출한다. 객체에 메시지를 전달한다.
+
+특징
+-추상화 : 객체에서 공통된 속성과 행위를 추출하는 것
+ -> 추상 데이터 타입 (클래스)
+-상속 : 상위 클래스의 속성, 행위를 하위 클래스가 물려받는 것
+ ->재사용으로 인해 코드가 줄어듦
+ ->범용적인 사용 가능, 물려받은 자료의 자유로운 사용 및 추가 가능
+ -다형성 : 다양한 형태로 나타날 수 있음
+
+생성자 메서드 - __init__ 
+
+class 클래스명:
+    def __init__(self,매개변수 목록):
+
+
+소멸자 메서드 - __del__
+
+class 클래스명:
+    def __del__(self):
+
+
+
+"""
+
+# #딕셔너리 및 리스트 객체를 이용한 코드 생성
+# members = [
+#     {'name' : '홍길동', 'age': 20},
+#     {'name' : '이순신', 'age': 45},
+#     {'name' : '강감찬', 'age': 35}
+# ]
+
+# for member in members:
+#     print(member)
+
+# def create(name, age):
+#     return {'name': name, 'age':age}
+
+# def to_str(person):
+#     return '{}\t{}'.format(person['name'],person['age'])
+
+# members = [
+#     {'name' : '홍길동', 'age': 20},
+#     {'name' : '이순신', 'age': 45},
+#     {'name' : '강감찬', 'age': 35}
+# ]
+
+# for member in members:
+#     print(to_str(member))
+
+
+# class Person:
+#     pass
+
+# member = Person()
+
+# if isinstance(member, Person):
+#     print('member는 Person 클래스의 인스턴스입니다.')
+
+#객체의 생성과 소멸, self
+# class Person:
+#     def __init__(self, name, age): #self가 가리키는 객체공간에 name, age 필드 생성
+#         self.name = name
+#         self.age = age
+#         print('{} 객체가 생성되었습니다'.format(self, name))
+
+#     def __del__(self):
+#         print('{} 객체가 제거되었습니다.'.format(self.name))
+
+# member = Person('홍길동',20)
+# print('{}\t{}'.format(member.name, member.age))
+# print(dir(member))
+
+#클래스 메서드 사용
+# class Person:
+#     count = 0
+
+#     def __init__(self, name, age):
+#         self.__name = name
+#         self.__age = age
+#         Person.count +=1
+#         print('{} 객체가 생성되었습니다.'.format(self.__name))
+
+#     def __del__(self):
+#         print('{} 객체개 제거되었습니다.'.format(self.__name))
+
+#     def to_str(self):
+#         return '{}\t{}'.format(self.__name, self.__age)
+
+
+#__str()__메서드
+#str()함수에 객체를 전달해 문자열로 변환
+
+# class Person:
+#     count = 0
+
+#     def __init__(self, name, age):
+#         self.__name = name
+#         self.__age = age
+#         Person.count += 1
+#         print('{} 객체가 생성되었습니다.'.format(self.__name))
+
+#     def __del__(self):
+#         print('{} 객체가 제거되었습니다.'.format(self.__name))
+
+#     @property
+#     def name(self):
+#         return self.__name
+    
+#     @property
+#     def age(self):
+#         return self.__age
+    
+#     @age.setter
+#     def age(self,age):
+#         if age < 0:
+#             raise TypeError('나이는 0이상의 값만 허용합니다.')
+#         self.__age = age
+
+    
+#     @classmethod
+#     def get_info(cls):
+#         return '현재 Person 클래스의 인스턴스는 총 {} 개입니다.'.format(cls.count)
+
+#     def __gt__(self, other):
+#         return self.__age > other.__age
+    
+#     def __ge__(self, other):
+#         return self.__age >= other.__age
+    
+#     def __lt__(self, other):
+#         return self.__age < other.__age
+    
+#     def __le__(self, other):
+#         return self.__age <= other.__age
+
+#     def __eq__(self,other):
+#         return self.__age == other.__age
+
+#     def __ne__(self, other):
+#         return self.__age != other.__age
+
+#     def __str__(self):
+#         return '{}\n{}'.format(self.__name, self.__age)
+
+# members = [
+#     Person('홍길동',20),
+#     Person('이순신',45),
+#     Person('강감찬',35)
+# ]
+
+# for member in members:
+#     print(str(member)) #Person 클래스의 객체 전달하면 __Str__메서드 호출
+
+
+#클래스 상속(부모 클래스 -> 자식 클래스)
+
+class Person:
+    def __init__(self, family_name):
+        self.__family_name = family_name
+        print('Parent 클래스의 __init__()...')
+
+    @property
+    def family_name(self):
+        return self.__family_name
+
+class Child(Parent):
+    def __init__(self, first_name, last_name):
+        Parent.__init__(self, last_name)
+        #super().__init__(last_name)
+        self.__first_name = first_name
+        print('Child 클래스의 __init__()...')
